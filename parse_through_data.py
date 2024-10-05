@@ -18,8 +18,8 @@ def calculateSNR(telescopeDiameter):
     
         snr = 100 * ((stellarRadius * planetRadius * (telescopeDiameter/6))/((distanceToPlanetary/10) *(planetStarDistance))) ** 2
 
-    
-        planetDictionary[exoPlanet_name] = snr
+        if snr > 5:
+            planetDictionary[exoPlanet_name] = snr
 
     return planetDictionary
     # Check if the value is NaN
