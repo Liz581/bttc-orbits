@@ -5,7 +5,8 @@ body {
     margin: 0px;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
-    background-image: url('/img/black_galaxy.png');
+    /* background-image: url('/img/black_galaxy.png'); */
+    background-image: url('https://liz581.github.io/bttc-orbits/img/black_galaxy.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
