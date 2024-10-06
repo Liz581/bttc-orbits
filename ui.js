@@ -6,7 +6,12 @@ if (navigator.appName == 'Microsoft Internet Explorer' || (navigator.appName == 
     $("#floating-screenshot").css("display", "none");
 }
 
-
+const value = document.querySelector("#slider_val");
+const input = document.querySelector("#tel_input");
+value.textContent = input.value;
+input.addEventListener("input", (event) => {
+  value.textContent = event.target.value;
+});
 
 var orbitViewer = null;
 var urlController = null;

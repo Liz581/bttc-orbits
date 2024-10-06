@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <script src="https://kit.fontawesome.com/af3ad01afe.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="jquery-ui.css">
-    <link rel="stylesheet" href="font-awesome.min.css">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-datetimepicker.css">
     <link rel="stylesheet" href="bootstrap-toggle.css">
@@ -87,7 +86,8 @@
 
             <a href="javascript:void(0);" class="sidenav-link" data-toggle="modal" data-target="#linkModal" style="display:none;">Permalink</a>
             <a href="javascript:void(0);" class="sidenav-link" data-toggle="modal" data-target="#helpModal">Help</a>
-            <a href="javascript:void(0);" class="sidenav-link" data-toggle="modal" data-target="#aboutModal">About</a>
+            <a href="javascript:void(0);" class="sidenav-link" data-toggle="modal" data-target="#aboutModal">About JPL's Orbit Viewer</a>
+            <a href="javascript:void(0);" class="sidenav-link" data-toggle="modal" data-target="#bttcModal">About the NASA Apps BTTC Team</a>
 
         </div>
         <div id="sidenav_content_settings" class="sidenav_content" style="display:none;">
@@ -356,48 +356,53 @@ The module is written in JavaScript, and it makes use of WebGL via the open-sour
         </div>
     </div>
 
+    <!-- BTTC Modal -->
+    <div id="bttcModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Who Are We?</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Our team was brough together by Amelia Jackson from Break Through Tech Chicago. We are a team of women engineer's working towards expanding our learning through new opportunities.
+                        This is all of ours first hackathon and we were so glad to be able to get experience on what a hackathon is like.
+
+                        The changes we made to this project was by creating a title, starting to add a filter for the exoplanets and making this about us section.
+                        
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 
     <div id="filterModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-header"> Filter Exoplanets</h4>
+                    <h4 class="modal-header"> Exoplanet Filters</h4>
                 </div>
                 <div class="modal-body">
+                    <h3>Telescope Diameter</h3>
                     <div id="diameter-container">
-                        <li><h2 href="javascript:void(0);">Telescope Diameter</h2></li>
-                        <div class="diameter-value">Value</div>
-                            <div class="slidecontainer">
-                                <span> 5 </span>
-                                <input type="range" min="5" max="15" value="0" step="1" class="slider" id="myRange">
-                                <span> 15</span>
-                                <p> <span id="demo"></span></p>
-                              </div>
+                        <input id="tel_input" type="range" min="5" max="15" step="1" />
+                        <p>Value: <output id="slider_val"></output></p>
                     </div>
-                    <li><h2 href="javascript:void(0);">Distance to Exoplanetary System</h2></li>
+                    <h3 >Distance to Exoplanetary System</h3>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
-        </div>
-    </div>
-
-
-    <div id="parameter_controls">
-        <div class="dropdown parameter-dropdown" data-toggle="tooltip" data-placement="left" title="Filter by Parameters">
-            <button class="btn btn-default dropdown-toggle" data-toggle="modal" data-target="#filterModal" type="button" id="parameterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-solid fa-filter"></i>
-                <span id="filter-label"> Filter </span>
-            </button>
-            <!--
-            <ul class="dropdown-menu" aria-labelledby="parameterDropdown" id="parameterDropdownOptions">
-                <li><a href="javascript:void(0);">Telescope Diameter</a></li>
-                <li><a href="javascript:void(0);">Distance to Exoplanetary System</a></li>
-                <li><a href="javascript:void(0);">Discovery Method</a></li>
-                <li><a href="javascript:void(0);">Discovery Year</a></li>
-                <li><a href="javascript:void(0);">Discovery Facility</a></li>-->
-            </ul>
         </div>
     </div>
 
@@ -432,7 +437,6 @@ The module is written in JavaScript, and it makes use of WebGL via the open-sour
                 <button type="button" class="btn btn-default " id="floating-sim-play-forward" data-toggle="tooltip" data-placement="bottom" title="Play Forward"><i class="fa fa-forward" aria-hidden="true"></i></button>
             </div>
 
-
                 <div class="interval-and-date-container">
                     <div class="dropdown interval-dropdown"  data-toggle="tooltip" data-placement="left" title="Animation Step Interval">
                         <button class="btn btn-default dropdown-toggle" type="button" id="intervalDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -461,6 +465,14 @@ The module is written in JavaScript, and it makes use of WebGL via the open-sour
             <div class="btn-group floating-button-controls " role="group" aria-label="...">
                 <button type="button" class="btn btn-default " id="floating-fullscreen" data-toggle="tooltip" data-placement="bottom" title="Enter Fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
                 <button type="button" class="btn btn-default " id="floating-screenshot" data-toggle="tooltip" data-placement="bottom" title="Capture Screenshot"><i class="fa fa-desktop" aria-hidden="true"></i></button>
+            </div>
+        </div>
+
+        <div id="view-control-button-container">
+            <div class="dropdown parameter-dropdown" role="group" data-toggle="tooltip" data-placement="left" title="Filter by Parameters">
+                <button class="btn btn-default dropdown-toggle" data-toggle="modal" data-target="#filterModal" type="button" id="parameterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-solid fa-filter"></i>
+                    <span id="filter-label"> Filter </span>
+                </button>
             </div>
         </div>
    
