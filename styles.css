@@ -1,12 +1,14 @@
 body {
-    background-color: #000000;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     padding: 0px;
     margin: 0px;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+    background-image: url('/img/black_galaxy.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 canvas {
