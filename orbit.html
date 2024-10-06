@@ -355,6 +355,73 @@ The module is written in JavaScript, and it makes use of WebGL via the open-sour
         </div>
     </div>
 
+
+    <div id="filterModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-header"> Filter Exoplanets</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="diameter-container">
+                        <li><h2 href="javascript:void(0);">Telescope Diameter</h2></li>
+                        <div class="diameter-value">Value</div>
+                            <div class="slidecontainer">
+                                <span> 5 </span>
+                                <input type="range" min="5" max="15" value="0" step="1" class="slider" id="myRange">
+                                <span> 15</span>
+                                <p> <span id="demo"></span></p>
+                              </div>
+                    </div>
+                    <li><h2 href="javascript:void(0);">Distance to Exoplanetary System</h2></li>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="parameter_controls">
+        <div class="dropdown parameter-dropdown" data-toggle="tooltip" data-placement="left" title="Filter by Parameters">
+            <button class="btn btn-default dropdown-toggle" data-toggle="modal" data-target="#filterModal" type="button" id="parameterDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="fa fa-solid fa-filter"></i>
+                <span id="filter-label"> Filter </span>
+            </button>
+            <!--
+            <ul class="dropdown-menu" aria-labelledby="parameterDropdown" id="parameterDropdownOptions">
+                <li><a href="javascript:void(0);">Telescope Diameter</a></li>
+                <li><a href="javascript:void(0);">Distance to Exoplanetary System</a></li>
+                <li><a href="javascript:void(0);">Discovery Method</a></li>
+                <li><a href="javascript:void(0);">Discovery Year</a></li>
+                <li><a href="javascript:void(0);">Discovery Facility</a></li>-->
+            </ul>
+        </div>
+    </div>
+
+    
+    <div id="pop_up">
+        <button type="button" class="btn btn-default" onclick="cancelPopUpFilters()" id="cancel-icon" data-toggle="tooltip" data-placement="above" title="Cancel"><i class="fa-solid fa-circle-xmark"></i></button>
+        <div id="diameter-container">
+            <li><h2 href="javascript:void(0);">Telescope Diameter</h2></li>
+            <div class="diameter-value">Value</div>
+                <div class="slidecontainer">
+                    <span> 5 </span>
+                    <input type="range" min="5" max="15" value="0" step="1" class="slider" id="myRange">
+                    <span> 15</span>
+                    <p> <span id="demo"></span></p>
+                  </div>
+        </div>  
+        <li><h2 href="javascript:void(0);">Distance to Exoplanetary System</h2></li>
+        <!--<li><h2 href="javascript:void(0);">Discovery Method</a></li>
+        <li><h2 href="javascript:void(0);">Discovery Year</a></li>
+        <li><h2 href="javascript:void(0);">Discovery Facility</a></li>-->
+        <button onclick="hidePopUpFilters()"> Submit </button>
+    </div>
+
+
+
     <div id="floating_controls">
 
             <div class="btn-group floating-button-controls" role="group" aria-label="...">

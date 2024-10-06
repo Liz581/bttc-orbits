@@ -13,6 +13,20 @@ self.console = self.console || {
 
     };
 
+function cancelPopUpFilters(){
+    document.getElementById('pop_up').style.display = 'none'; 
+    document.getElementById('overlay').style.display = 'none';
+}
+function showPopUpFilters(){
+    document.getElementById('pop_up').style.display = 'block'; 
+    document.getElementById('overlay').style.display = 'block'; 
+}
+
+function hidePopUpFilters(){
+    document.getElementById('pop_up').style.display = 'none'; 
+    document.getElementById('overlay').style.display = 'none';
+}
+
 JPL.RAD_360 = 360 * (Math.PI / 180);
 JPL.RAD_270 = 270 * (Math.PI / 180);
 JPL.RAD_180 = 180 * (Math.PI / 180);
@@ -195,9 +209,6 @@ JPL.Math.radiusAtGeocentricLatitude = function(equatorialRadius, latitude, flatt
     var r = Math.sqrt(JPL.Math.sqr(R, 2) / (1 + (1 / JPL.Math.sqr(1 - f) - 1) * JPL.Math.sqr(Math.sin(l))));
     return r;
 };
-
-
-
 
 
 

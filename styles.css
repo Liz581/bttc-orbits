@@ -233,6 +233,68 @@ a:focus {
     margin-right: auto;
 }
 
+#parameter_controls {
+    border: 2px solid #e9eaec; /* Border color */
+    padding: 8px;             /* Space inside the box */
+    border-radius: 8px;        /* Rounded corners */
+    background-color: #fff;     /* Background color */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100px;              /* Width of the box */
+    text-align: center;    
+    margin-left: 923px;
+    margin-top: 3px;
+}
+
+#filterModal {
+    list-style-type: none;
+    font-size: 20px;
+}
+
+#diameter-container {
+    width: 300px;
+  margin: 2rem auto 0;
+  font-size: 20px;
+}
+
+#diameter-value{
+}
+
+#slide-container {
+    display: flex;
+  justify-content: space-between;
+
+}
+
+#pop_up{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 50%; /* Center the pop-up */
+    top: 50%; /* Center the pop-up */
+    transform: translate(-50%, -50%); /* Center the pop-up */
+    border: 1px solid #6e6e6e; /* Border around the pop-up */
+    background-color: white; /* Background color */
+    padding: 20px; /* Padding inside the pop-up */
+    z-index: 1000; /* Sit on top */
+    box-shadow: 0 4px 8px rgba(244, 242, 242, 0.2); /* Shadow */
+    display: flex;
+    list-style-type: none;
+    font-size: 15px
+}
+
+
+
+#overlay {
+
+}
+
+#pop_up li {
+    margin-left: 20px;
+}
+
+#span {
+    font-weight: bold;
+}
+
 #floating_controls {
     top: 5px;
     position: absolute;
