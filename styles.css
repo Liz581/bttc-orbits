@@ -66,7 +66,7 @@ canvas {
 
 .sidenav .top-logos {
     height: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
  }
 
 .sidenav .top-logos img {
@@ -89,8 +89,8 @@ canvas {
 }
 
 .sidenav_top {
-    height: 50px;
-    padding-top: 60px;
+    height: 10px;
+    padding-top: 0px;
     overflow: hidden;
     width: 250px;
     background-color: #111;
@@ -98,7 +98,7 @@ canvas {
 
 .sidenav_content {
     overflow-y: auto;
-    height: calc(100% - 180px);
+    height: calc(100% - 200px);
     width: 250px;
     overflow-x: hidden;
     transition: 0.5s;
